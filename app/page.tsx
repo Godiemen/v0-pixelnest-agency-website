@@ -4,6 +4,7 @@ import { ArrowRight, Smartphone, Globe, Palette, TrendingUp, Clock, DollarSign, 
 import { UtilityBar } from "@/components/utility-bar"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { HeroSlideshow } from "@/components/hero-slideshow"
 
 const services = [
   {
@@ -69,74 +70,8 @@ export default function Home() {
       <UtilityBar />
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="bg-primary py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight text-balance">
-                We Build Websites & Apps For Your Business
-              </h1>
-              <p className="mt-6 text-lg text-primary-foreground/80 max-w-xl">
-                Pixelnest is a Durban-based web and app development agency. We help small and medium businesses get online with quality websites, mobile apps, and digital solutions.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-background text-primary px-6 py-3 rounded-lg font-semibold hover:bg-background/90 transition-colors"
-                >
-                  Get a Free Quote
-                  <ArrowRight className="h-5 w-5" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
-                >
-                  See Our Services
-                </Link>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                  <Image
-                    src="/images/hero-1.png"
-                    alt="Team collaboration"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="relative aspect-square rounded-xl overflow-hidden">
-                  <Image
-                    src="/images/hero-2.png"
-                    alt="Developer coding"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="relative aspect-square rounded-xl overflow-hidden">
-                  <Image
-                    src="/images/hero-3.png"
-                    alt="Team brainstorming"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                  <Image
-                    src="/images/hero-4.png"
-                    alt="Presentation"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section with Slideshow */}
+      <HeroSlideshow />
 
       {/* Services Preview */}
       <section className="py-20 bg-background">
