@@ -1,17 +1,25 @@
 import Link from "next/link"
+import Image from "next/image"
+import { Mail, MapPin, MessageCircle, ArrowRight } from "lucide-react"
 
-const footerLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/contact", label: "Contact" },
+const serviceLinks = [
+  { href: "/services#web", label: "Website Development" },
+  { href: "/services#mobile", label: "App Development" },
+  { href: "/services#design", label: "UI/UX Design" },
+  { href: "/services#seo", label: "SEO & Marketing" },
 ]
 
-function TwitterIcon({ className }: { className?: string }) {
+const companyLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About Us" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/contact", label: "Contact Us" },
+]
+
+function FacebookIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
     </svg>
   )
 }
@@ -32,76 +40,174 @@ function LinkedinIcon({ className }: { className?: string }) {
   )
 }
 
+function TwitterIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  )
+}
+
 const socialLinks = [
-  { href: "https://twitter.com", icon: TwitterIcon, label: "Twitter" },
+  { href: "https://facebook.com", icon: FacebookIcon, label: "Facebook" },
   { href: "https://instagram.com", icon: InstagramIcon, label: "Instagram" },
   { href: "https://linkedin.com", icon: LinkedinIcon, label: "LinkedIn" },
+  { href: "https://twitter.com", icon: TwitterIcon, label: "Twitter" },
 ]
 
 export function Footer() {
   return (
-    <footer className="bg-accent py-12">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo & Description */}
-          <div className="md:col-span-2">
-            <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-accent-foreground">
-                Pixelnest
-              </span>
+    <footer className="relative">
+      {/* CTA Bar */}
+      <div className="bg-primary">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <h3 className="text-xl md:text-2xl font-bold text-primary-foreground text-center sm:text-left">
+              Ready to grow your business online?
+            </h3>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-background text-primary px-6 py-3 rounded-lg font-semibold hover:bg-background/90 transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            >
+              Get a Free Quote
+              <ArrowRight className="h-5 w-5" />
             </Link>
-            <p className="mt-4 text-accent-foreground/70 max-w-md">
-              A Durban-based web and app development agency helping businesses get online and grow. Quality work, honest pricing, real results.
-            </p>
           </div>
+        </div>
+      </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold text-accent-foreground mb-4">Quick Links</h3>
-            <nav className="flex flex-col gap-2">
-              {footerLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-accent-foreground/70 hover:text-accent-foreground transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
+      {/* Main Footer with Background Image */}
+      <div className="relative">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/footer-bg.png"
+            alt=""
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#003380]/90" />
+        </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="font-semibold text-accent-foreground mb-4">Contact</h3>
-            <div className="flex flex-col gap-2 text-accent-foreground/70">
-              <p>nqobani@pixelnest.co.za</p>
-              <p>Durban, KwaZulu-Natal</p>
-              <p>South Africa</p>
+        {/* Footer Content */}
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+            {/* Column 1: Logo & Description */}
+            <div className="lg:col-span-1">
+              <Link href="/" className="inline-block">
+                <Image
+                  src="/images/logo.png"
+                  alt="Pixelnest"
+                  width={160}
+                  height={50}
+                  className="h-12 w-auto brightness-0 invert"
+                />
+              </Link>
+              <p className="mt-4 text-white/70 text-sm leading-relaxed">
+                We build websites and apps for small businesses in Durban and across South Africa.
+              </p>
+              {/* Social Icons */}
+              <div className="flex items-center gap-3 mt-6">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary hover:shadow-[0_0_15px_rgba(0,82,204,0.5)] transition-all duration-300 group"
+                    aria-label={social.label}
+                  >
+                    <social.icon className="h-4 w-4 text-white group-hover:text-white" />
+                  </a>
+                ))}
+              </div>
             </div>
-            {/* Social Icons */}
-            <div className="flex items-center gap-3 mt-4">
-              {socialLinks.map((social) => (
+
+            {/* Column 2: Services */}
+            <div>
+              <h4 className="text-white font-semibold text-lg mb-5">Services</h4>
+              <nav className="flex flex-col gap-3">
+                {serviceLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Column 3: Company */}
+            <div>
+              <h4 className="text-white font-semibold text-lg mb-5">Company</h4>
+              <nav className="flex flex-col gap-3">
+                {companyLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-white/70 hover:text-primary transition-colors duration-300 text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Column 4: Contact */}
+            <div>
+              <h4 className="text-white font-semibold text-lg mb-5">Contact Us</h4>
+              <div className="flex flex-col gap-4">
                 <a
-                  key={social.label}
-                  href={social.href}
+                  href="mailto:nqobani@pixelnest.co.za"
+                  className="flex items-center gap-3 text-white/70 hover:text-primary transition-colors duration-300 text-sm"
+                >
+                  <Mail className="h-5 w-5 flex-shrink-0" />
+                  nqobani@pixelnest.co.za
+                </a>
+                <div className="flex items-start gap-3 text-white/70 text-sm">
+                  <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
+                  <span>Durban, KwaZulu-Natal,<br />South Africa</span>
+                </div>
+                <a
+                  href="https://wa.me/27000000000"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 bg-accent-foreground/10 rounded-full flex items-center justify-center hover:bg-accent-foreground/20 transition-colors"
-                  aria-label={social.label}
+                  className="inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2.5 rounded-lg font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-105 text-sm mt-2 w-fit"
                 >
-                  <social.icon className="h-4 w-4 text-accent-foreground" />
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp Us
                 </a>
-              ))}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-10 pt-8 border-t border-accent-foreground/10 text-center">
-          <p className="text-accent-foreground/70 text-sm">
-            © 2026 Pixelnest. All rights reserved. Proudly South African.
-          </p>
+        {/* Bottom Bar */}
+        <div className="relative z-10 border-t border-white/10">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <p className="text-white/50 text-sm">
+                © 2026 Pixelnest. All rights reserved.
+              </p>
+              <div className="flex items-center gap-4 text-sm">
+                <Link
+                  href="/privacy"
+                  className="text-white/50 hover:text-primary transition-colors duration-300"
+                >
+                  Privacy Policy
+                </Link>
+                <span className="text-white/30">|</span>
+                <Link
+                  href="/terms"
+                  className="text-white/50 hover:text-primary transition-colors duration-300"
+                >
+                  Terms of Service
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
