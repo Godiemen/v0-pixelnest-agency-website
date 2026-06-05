@@ -2,19 +2,22 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, Search } from "lucide-react"
+import { usePathname } from "next/navigation"
+import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About Us" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,22 +47,30 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-foreground hover:text-primary transition-colors font-medium py-2 group"
+                className={cn(
+                  "relative text-foreground hover:text-primary transition-colors font-medium py-2 group",
+                  pathname === link.href && "text-primary"
+                )}
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                <span 
+                  className={cn(
+                    "absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300",
+                    pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
+                  )} 
+                />
               </Link>
             ))}
           </div>
 
-          {/* Search Icon & Mobile Menu Button */}
+          {/* Get a Quote Button & Mobile Menu */}
           <div className="flex items-center gap-4">
-            <button
-              className="text-foreground hover:text-primary transition-colors"
-              aria-label="Search"
+            <Link
+              href="/contact"
+              className="hidden sm:inline-flex bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors"
             >
-              <Search className="h-5 w-5" />
-            </button>
+              Get a Quote
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -81,11 +92,21 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="px-4 py-3 text-foreground hover:text-primary hover:bg-secondary rounded-lg transition-colors font-medium"
+                  className={cn(
+                    "px-4 py-3 hover:text-primary hover:bg-secondary rounded-lg transition-colors font-medium",
+                    pathname === link.href ? "text-primary bg-secondary" : "text-foreground"
+                  )}
                 >
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="mx-4 mt-2 bg-primary text-primary-foreground px-4 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors text-center"
+              >
+                Get a Quote
+              </Link>
             </div>
           </div>
         )}

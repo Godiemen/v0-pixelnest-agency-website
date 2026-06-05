@@ -1,9 +1,11 @@
 import Link from "next/link"
 
 const footerLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/contact", label: "Contact" },
 ]
 
 function TwitterIcon({ className }: { className?: string }) {
@@ -40,48 +42,65 @@ export function Footer() {
   return (
     <footer className="bg-accent py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-accent-foreground">
-              Pixelnest
-            </span>
-          </Link>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo & Description */}
+          <div className="md:col-span-2">
+            <Link href="/" className="flex items-center">
+              <span className="text-2xl font-bold text-accent-foreground">
+                Pixelnest
+              </span>
+            </Link>
+            <p className="mt-4 text-accent-foreground/70 max-w-md">
+              A Durban-based web and app development agency helping businesses get online and grow. Quality work, honest pricing, real results.
+            </p>
+          </div>
 
-          {/* Links */}
-          <nav className="flex flex-wrap items-center justify-center gap-6">
-            {footerLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-accent-foreground mb-4">Quick Links</h3>
+            <nav className="flex flex-col gap-2">
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-accent-foreground/70 hover:text-accent-foreground transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-          {/* Social Icons */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-accent-foreground/10 rounded-full flex items-center justify-center hover:bg-accent-foreground/20 transition-colors"
-                aria-label={social.label}
-              >
-                <social.icon className="h-5 w-5 text-accent-foreground" />
-              </a>
-            ))}
+          {/* Contact Info */}
+          <div>
+            <h3 className="font-semibold text-accent-foreground mb-4">Contact</h3>
+            <div className="flex flex-col gap-2 text-accent-foreground/70">
+              <p>nqobani@pixelnest.co.za</p>
+              <p>Durban, KwaZulu-Natal</p>
+              <p>South Africa</p>
+            </div>
+            {/* Social Icons */}
+            <div className="flex items-center gap-3 mt-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-accent-foreground/10 rounded-full flex items-center justify-center hover:bg-accent-foreground/20 transition-colors"
+                  aria-label={social.label}
+                >
+                  <social.icon className="h-4 w-4 text-accent-foreground" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-accent-foreground/10 text-center">
+        <div className="mt-10 pt-8 border-t border-accent-foreground/10 text-center">
           <p className="text-accent-foreground/70 text-sm">
-            © 2026 Pixelnest. All rights reserved.
+            © 2026 Pixelnest. All rights reserved. Proudly South African.
           </p>
         </div>
       </div>
