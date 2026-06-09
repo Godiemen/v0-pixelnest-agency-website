@@ -6,13 +6,12 @@ const serviceLinks = [
   { href: "/services#web", label: "Website Development" },
   { href: "/services#mobile", label: "App Development" },
   { href: "/services#design", label: "UI/UX Design" },
-  { href: "/services#seo", label: "SEO & Marketing" },
 ]
 
 const companyLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/portfolio", label: "Our Work" },
   { href: "/contact", label: "Contact Us" },
 ]
 
@@ -81,7 +80,7 @@ export function Footer() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/footer-bg.png"
+            src="/Nano Banana 2 - Abstract digital_visualization of global connectivity _ glowing blue_and white nodes.png"
             alt=""
             fill
             className="object-cover"
@@ -96,7 +95,7 @@ export function Footer() {
             <div className="lg:col-span-1">
               <Link href="/" className="inline-block">
                 <Image
-                  src="/images/logo.png"
+                  src="/logo.png"
                   alt="Pixelnest"
                   width={160}
                   height={50}

@@ -4,14 +4,14 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Search } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/portfolio", label: "Our Work" },
   { href: "/contact", label: "Contact" },
 ]
 
@@ -40,7 +40,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo.png"
+              src="/logo.png"
               alt="Pixelnest"
               width={140}
               height={40}
@@ -71,8 +71,16 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Get a Quote Button & Mobile Menu */}
+          {/* Search, Get a Quote Button & Mobile Menu */}
           <div className="flex items-center gap-4">
+            {/* Search button */}
+            <button
+              className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors"
+              aria-label="Search"
+            >
+              <Search className="h-5 w-5" />
+            </button>
+
             <Link
               href="/contact"
               className="hidden sm:inline-flex bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors"

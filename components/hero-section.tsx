@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 export function HeroSection() {
   return (
@@ -16,21 +17,18 @@ export function HeroSection() {
               Pixelnest is a new Durban-based web agency helping small businesses get online with professional websites and mobile apps
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-background text-primary hover:bg-background/90 font-semibold px-8"
+              <Link
+                href="/contact"
+                className={cn(buttonVariants({ size: "lg" }), "bg-background text-primary hover:bg-background/90 font-semibold px-8")}
               >
-                <Link href="#contact">Get a Free Quote</Link>
-              </Button>
-              <Button 
-                asChild 
-                size="lg" 
-                variant="outline" 
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8"
+                Get a Free Quote
+              </Link>
+              <Link
+                href="/services"
+                className={cn(buttonVariants({ size: "lg", variant: "outline" }), "border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8")}
               >
-                <Link href="#services">See Our Services</Link>
-              </Button>
+                See Our Services
+              </Link>
             </div>
           </div>
 
@@ -39,16 +37,16 @@ export function HeroSection() {
             <div className="space-y-4">
               <div className="relative h-40 sm:h-48 rounded-xl overflow-hidden">
                 <Image
-                  src="/images/hero-1.png"
-                  alt="Team collaborating on project"
+                  src="/Nano Banana 2 - A friendly_customer support_representative wearing a headset_ smiling warmly_at a mo.png"
+                  alt="Customer support"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative h-56 sm:h-64 rounded-xl overflow-hidden">
                 <Image
-                  src="/images/hero-2.png"
-                  alt="Developer writing code"
+                  src="/programming-code-abstract-technology-background-of-software-developer-and-computer-script.jpeg"
+                  alt="Code background"
                   fill
                   className="object-cover"
                 />
@@ -57,16 +55,16 @@ export function HeroSection() {
             <div className="space-y-4 pt-8">
               <div className="relative h-56 sm:h-64 rounded-xl overflow-hidden">
                 <Image
-                  src="/images/hero-3.png"
-                  alt="Team brainstorming session"
+                  src="/Nano Banana 2 - Web DevelopmentA clean_ modern workspace with a large ultrawide monitor displaying a.png"
+                  alt="Workspace"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative h-40 sm:h-48 rounded-xl overflow-hidden">
                 <Image
-                  src="/images/hero-4.png"
-                  alt="Presentation in meeting room"
+                  src="/digital-technology-coding-programmer-and-cyber-security-software-development-javascript-on-virtual-screen-internet-of-things-iot-photo.jpg"
+                  alt="Technology"
                   fill
                   className="object-cover"
                 />

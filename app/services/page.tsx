@@ -1,9 +1,15 @@
+import type { Metadata } from 'next'
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Check, ChevronRight, Globe, Smartphone, Palette, TrendingUp } from "lucide-react"
+import { ArrowRight, Check, ChevronRight, Globe, Smartphone, Palette, TrendingUp, Linkedin, Facebook } from "lucide-react"
 import { UtilityBar } from "@/components/utility-bar"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+
+export const metadata: Metadata = {
+  title: 'Services | Pixelnest Web & App Development Agency',
+  description: 'Web development, mobile apps, UI/UX design, and SEO services for small businesses in Durban and across South Africa.',
+}
 
 const services = [
   {
@@ -54,81 +60,107 @@ export default function ServicesPage() {
       <UtilityBar />
       <Navbar />
 
-      {/* Hero Section - Dark Navy */}
-      <section className="bg-accent py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-accent-foreground/70 text-sm mb-6">
-            <Link href="/" className="hover:text-accent-foreground transition-colors">Home</Link>
+      {/* Hero Section - Background Image */}
+      <section className="relative py-16 lg:py-20 overflow-hidden">
+        {/* Background Image */}
+        <Image
+          src="/digital-technology-coding-programmer-and-cyber-security-software-development-javascript-on-virtual-screen-internet-of-things-iot-photo.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 text-white/70 text-sm mb-6">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight className="h-4 w-4" />
-            <span className="text-accent-foreground">Services</span>
+            <span className="text-white">Services</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-accent-foreground">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
             Our Services
           </h1>
-          <p className="mt-4 text-lg text-accent-foreground/80 max-w-2xl">
+          <p className="mt-4 text-lg text-white/80 max-w-2xl">
             Everything you need to build your online presence and grow your business
           </p>
         </div>
       </section>
 
-      {/* Services Detailed Sections */}
-      <section className="py-16 bg-background">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-24">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                id={service.id}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  service.reverse ? "lg:flex-row-reverse" : ""
-                }`}
-              >
-                <div className={service.reverse ? "lg:order-2" : ""}>
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
+      {/* Services Detailed Sections - KPMG-style full-bleed blue blocks */}
+      {services.map((service) => (
+        <section
+          key={service.id}
+          id={service.id}
+          className="relative bg-primary overflow-hidden"
+        >
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[420px] lg:min-h-[500px]">
+              {/* Left: Text content */}
+              <div className="flex flex-col justify-center py-16 lg:py-20 pr-0 lg:pr-12 relative z-10">
+                {/* Breadcrumb */}
+                <div className="flex items-center gap-2 text-white/60 text-sm mb-6">
+                  <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                  <ChevronRight className="h-3.5 w-3.5" />
+                  <Link href="/services" className="hover:text-white transition-colors">Services</Link>
+                  <ChevronRight className="h-3.5 w-3.5" />
+                  <span className="text-white">{service.title}</span>
                 </div>
-                <div className={service.reverse ? "lg:order-1" : ""}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <service.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                      {service.title}
-                    </h2>
-                  </div>
-                  <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-                  <ul className="grid grid-cols-2 gap-3 mb-6">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-foreground">
-                        <Check className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-xl font-semibold text-primary mb-6">
-                    {service.price}
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+                  {service.title}
+                </h2>
+
+                <p className="mt-5 text-white/80 leading-relaxed max-w-xl">
+                  {service.description}
+                </p>
+
+                {/* Features */}
+                <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-2 max-w-md">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2 text-white/90 text-sm">
+                      <Check className="h-4 w-4 text-white flex-shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="mt-6 text-lg font-semibold text-white">
+                  {service.price}
+                </p>
+
+                {/* Share icons */}
+                <div className="mt-8 flex items-center gap-4">
+                  <span className="text-white/70 text-sm">Share</span>
+                  <a
+                    href="#"
+                    className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-colors"
+                    aria-label="Share on LinkedIn"
                   >
-                    Get a Quote
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
+                    <Linkedin className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-primary transition-colors"
+                    aria-label="Share on Facebook"
+                  >
+                    <Facebook className="h-4 w-4" />
+                  </a>
                 </div>
               </div>
-            ))}
+
+              {/* Right: Image with left-edge fade into blue */}
+              <div className="relative hidden lg:block">
+                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-primary to-transparent z-10" />
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* Bottom CTA */}
       <section className="bg-primary py-16">

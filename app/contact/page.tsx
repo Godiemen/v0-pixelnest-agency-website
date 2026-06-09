@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, ChevronRight, ChevronDown, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
 import { UtilityBar } from "@/components/utility-bar"
 import { Navbar } from "@/components/navbar"
@@ -57,18 +58,29 @@ export default function ContactPage() {
       <UtilityBar />
       <Navbar />
 
-      {/* Hero Section - Blue */}
-      <section className="bg-primary py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-primary-foreground/60 text-sm mb-6">
-            <Link href="/" className="hover:text-primary-foreground transition-colors">Home</Link>
+      {/* Hero Section - Background Image */}
+      <section className="relative py-16 lg:py-20 overflow-hidden">
+        {/* Background Image */}
+        <Image
+          src="/Nano Banana 2 - Abstract digital_visualization of global connectivity _ glowing blue_and white nodes.png"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Left-side dark gradient for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 text-white/60 text-sm mb-6">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight className="h-4 w-4" />
-            <span className="text-primary-foreground">Contact</span>
+            <span className="text-white">Contact</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
             Let&apos;s Build Something Great
           </h1>
-          <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl">
+          <p className="mt-4 text-lg text-white/80 max-w-2xl">
             We&apos;d love to hear about your project. Tell us what you need and we will get back to you within 24 hours.
           </p>
         </div>

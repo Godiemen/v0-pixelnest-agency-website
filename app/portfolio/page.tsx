@@ -12,45 +12,45 @@ const categories = ["All", "Websites", "Apps", "Design"]
 
 const projects = [
   {
-    image: "/images/portfolio-1.png",
-    title: "RetailHub E-Commerce",
+    image: "/Nano Banana 2 - Web DevelopmentA clean_ modern workspace with a large ultrawide monitor displaying a.png",
+    title: "E-Commerce Website",
     category: "Websites",
-    description: "Sample e-commerce platform concept with product catalog and checkout flow",
-    tag: "Concept Design",
-  },
-  {
-    image: "/images/portfolio-2.png",
-    title: "MediBook Healthcare",
-    category: "Websites",
-    description: "Sample healthcare website with appointment booking functionality",
+    description: "A modern online store with product catalog, shopping cart, and secure checkout.",
     tag: "Sample Project",
   },
   {
-    image: "/images/portfolio-3.png",
-    title: "QuickBite Delivery",
+    image: "/Nano Banana 2 - A friendly_customer support_representative wearing a headset_ smiling warmly_at a mo.png",
+    title: "Business Website",
+    category: "Websites",
+    description: "A professional company website with contact forms, service pages, and mobile responsiveness.",
+    tag: "Sample Project",
+  },
+  {
+    image: "/programming-code-abstract-technology-background-of-software-developer-and-computer-script.jpeg",
+    title: "Delivery App",
     category: "Apps",
-    description: "Food delivery app concept for local restaurants",
-    tag: "Concept Design",
-  },
-  {
-    image: "/images/portfolio-4.png",
-    title: "PropertyPro Listings",
-    category: "Websites",
-    description: "Real estate listing platform concept with search and filtering",
+    description: "A mobile app for order tracking, real-time notifications, and seamless payments.",
     tag: "Sample Project",
   },
   {
-    image: "/images/portfolio-5.png",
-    title: "FitLife Gym",
-    category: "Design",
-    description: "Fitness website design concept with membership management",
-    tag: "Concept Design",
+    image: "/digital-technology-coding-programmer-and-cyber-security-software-development-javascript-on-virtual-screen-internet-of-things-iot-photo.jpg",
+    title: "Real Estate Platform",
+    category: "Websites",
+    description: "A property listing website with search, filtering, and agent contact features.",
+    tag: "Sample Project",
   },
   {
-    image: "/images/portfolio-6.png",
-    title: "HopeFoundation NGO",
+    image: "/Nano Banana 2 - Abstract digital_visualization of global connectivity _ glowing blue_and white nodes.png",
+    title: "Dashboard UI Design",
+    category: "Design",
+    description: "A clean analytics dashboard with data visualizations and intuitive navigation.",
+    tag: "Sample Project",
+  },
+  {
+    image: "/Nano Banana 2 - Web DevelopmentA clean_ modern workspace with a large ultrawide monitor displaying a.png",
+    title: "Booking Website",
     category: "Websites",
-    description: "Non-profit website concept with donation integration",
+    description: "An appointment booking site with calendar integration and automated confirmations.",
     tag: "Sample Project",
   },
 ]
@@ -67,19 +67,20 @@ export default function PortfolioPage() {
       <UtilityBar />
       <Navbar />
 
-      {/* Hero Section - Dark */}
-      <section className="bg-foreground py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 text-background/60 text-sm mb-6">
-            <Link href="/" className="hover:text-background transition-colors">Home</Link>
-            <ChevronRight className="h-4 w-4" />
-            <span className="text-background">Portfolio</span>
+      {/* Hero Section - KPMG style full blue with image */}
+      <section className="relative bg-primary overflow-hidden py-16 lg:py-20">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/70" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-2 text-white/60 text-sm mb-6">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <ChevronRight className="h-3.5 w-3.5" />
+            <span className="text-white">Sample Projects</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-background">
-            Our Work
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+            What We Can Build
           </h1>
-          <p className="mt-4 text-lg text-background/70 max-w-2xl">
-            Here are some of our early projects — more coming soon as we continue to grow
+          <p className="mt-4 text-lg text-white/80 max-w-2xl">
+            As a new agency, these sample projects show the quality and range of work we deliver. Your project could be next.
           </p>
         </div>
       </section>
@@ -144,17 +145,17 @@ export default function PortfolioPage() {
       {/* CTA */}
       <section className="bg-primary py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground text-balance">
-            Working on something exciting? Be our next project.
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-balance">
+            Be our first real client. Let&apos;s build something great.
           </h2>
-          <p className="mt-4 text-primary-foreground/80 max-w-2xl mx-auto">
-            We are always looking for interesting projects to work on. Tell us about yours and let&apos;s create something amazing together.
+          <p className="mt-4 text-white/80 max-w-2xl mx-auto">
+            We are ready to put the same effort and quality into your project. Early clients get our full attention and competitive pricing.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-background text-primary px-8 py-4 rounded-lg font-semibold hover:bg-background/90 transition-colors mt-8"
+            className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-white/90 transition-colors mt-8"
           >
-            Get a Quote
+            Get a Free Quote
             <ArrowRight className="h-5 w-5" />
           </Link>
         </div>

@@ -1,5 +1,6 @@
 import { Check } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 const pricingPlans = [
@@ -113,16 +114,18 @@ export function PricingSection() {
                 ))}
               </ul>
 
-              <Button
-                asChild
-                className={`w-full ${
+              <Link
+                href="/contact"
+                className={cn(
+                  buttonVariants(),
+                  "w-full text-center",
                   plan.featured
                     ? "bg-background text-primary hover:bg-background/90"
                     : "bg-primary text-primary-foreground hover:bg-primary/90"
-                }`}
+                )}
               >
-                <Link href="#contact">Get Started</Link>
-              </Button>
+                Get Started
+              </Link>
             </div>
           ))}
         </div>

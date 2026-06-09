@@ -56,7 +56,7 @@ function FloatingCode() {
             left: `${snippet.x}%`,
             top: `${snippet.y}%`,
             animationDelay: `${i * 0.5}s`,
-            animationDuration: `${6 + Math.random() * 4}s`,
+            animationDuration: `${6 + ((i * 7) % 4)}s`,
           }}
         >
           {snippet.code}

@@ -68,6 +68,11 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   )
 }
 
+function seededRandom(n: number) {
+  const x = Math.sin(n * 12.9898) * 43758.5453
+  return x - Math.floor(x)
+}
+
 function FloatingParticles() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -76,10 +81,10 @@ function FloatingParticles() {
           key={i}
           className="absolute w-1 h-1 bg-blue-500/30 rounded-full animate-float"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${3 + Math.random() * 4}s`,
+            left: `${seededRandom(i) * 100}%`,
+            top: `${seededRandom(i + 100) * 100}%`,
+            animationDelay: `${seededRandom(i + 200) * 5}s`,
+            animationDuration: `${3 + seededRandom(i + 300) * 4}s`,
           }}
         />
       ))}
