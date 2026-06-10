@@ -211,8 +211,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <a href="mailto:nqobani@pixelnest.co.za" className="text-muted-foreground hover:text-primary transition-colors">
-                        nqobani@pixelnest.co.za
+                      <a href="mailto:info@pixelnest.co.za" className="text-muted-foreground hover:text-primary transition-colors">
+                        info@pixelnest.co.za
                       </a>
                     </div>
                   </div>
@@ -239,13 +239,13 @@ export default function ContactPage() {
 
               {/* WhatsApp Button */}
               <a
-                href="https://wa.me/27000000000"
+                href="https://wa.me/27786072333"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded-lg font-semibold hover:bg-[#22c55e] transition-colors w-full justify-center"
               >
                 <MessageCircle className="h-6 w-6" />
-                Chat on WhatsApp
+                Chat on WhatsApp — +27 786072333
               </a>
 
               {/* Map */}

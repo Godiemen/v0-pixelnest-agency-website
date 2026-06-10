@@ -17,6 +17,7 @@ const projects = [
     category: "Websites",
     description: "A modern online store with product catalog, shopping cart, and secure checkout.",
     tag: "Sample Project",
+    href: "/portfolio/ecommerce",
   },
   {
     image: "/Nano Banana 2 - A friendly_customer support_representative wearing a headset_ smiling warmly_at a mo.png",
@@ -24,6 +25,7 @@ const projects = [
     category: "Websites",
     description: "A professional company website with contact forms, service pages, and mobile responsiveness.",
     tag: "Sample Project",
+    href: "/portfolio/corporate",
   },
   {
     image: "/programming-code-abstract-technology-background-of-software-developer-and-computer-script.jpeg",
@@ -31,6 +33,7 @@ const projects = [
     category: "Apps",
     description: "A mobile app for order tracking, real-time notifications, and seamless payments.",
     tag: "Sample Project",
+    href: "/portfolio/mobile-app",
   },
   {
     image: "/digital-technology-coding-programmer-and-cyber-security-software-development-javascript-on-virtual-screen-internet-of-things-iot-photo.jpg",
@@ -38,6 +41,7 @@ const projects = [
     category: "Websites",
     description: "A property listing website with search, filtering, and agent contact features.",
     tag: "Sample Project",
+    href: "/portfolio/corporate",
   },
   {
     image: "/Nano Banana 2 - Abstract digital_visualization of global connectivity _ glowing blue_and white nodes.png",
@@ -45,6 +49,7 @@ const projects = [
     category: "Design",
     description: "A clean analytics dashboard with data visualizations and intuitive navigation.",
     tag: "Sample Project",
+    href: "/portfolio/landing",
   },
   {
     image: "/Nano Banana 2 - Web DevelopmentA clean_ modern workspace with a large ultrawide monitor displaying a.png",
@@ -52,6 +57,7 @@ const projects = [
     category: "Websites",
     description: "An appointment booking site with calendar integration and automated confirmations.",
     tag: "Sample Project",
+    href: "/portfolio/corporate",
   },
 ]
 
@@ -111,9 +117,10 @@ export default function PortfolioPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
-              <div
+              <Link
                 key={project.title}
-                className="group bg-secondary rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2"
+                href={project.href}
+                className="group bg-secondary rounded-xl overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-2 block"
               >
                 <div className="relative aspect-video overflow-hidden">
                   <Image
@@ -132,11 +139,11 @@ export default function PortfolioPage() {
                   <span className="text-xs font-medium text-primary">{project.category}</span>
                   <h3 className="text-xl font-semibold text-foreground mt-1">{project.title}</h3>
                   <p className="text-muted-foreground text-sm mt-2">{project.description}</p>
-                  <button className="inline-flex items-center gap-1 mt-4 text-primary font-medium text-sm group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 mt-4 text-primary font-medium text-sm group-hover:gap-2 transition-all">
                     View Details <ArrowRight className="h-4 w-4" />
-                  </button>
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

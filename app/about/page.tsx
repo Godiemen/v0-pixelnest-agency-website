@@ -109,16 +109,16 @@ export default function AboutPage() {
             </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            <Link href="#our-story" className="text-foreground hover:text-primary transition-colors py-2 border-t-2 border-transparent hover:border-primary font-medium text-sm">
+            <Link href="/about/story" className="text-foreground hover:text-primary transition-colors py-2 border-t-2 border-transparent hover:border-primary font-medium text-sm">
               Our Story
             </Link>
-            <Link href="#our-values" className="text-foreground hover:text-primary transition-colors py-2 border-t-2 border-transparent hover:border-primary font-medium text-sm">
+            <Link href="/about/values" className="text-foreground hover:text-primary transition-colors py-2 border-t-2 border-transparent hover:border-primary font-medium text-sm">
               Our Values
             </Link>
-            <Link href="#our-team" className="text-foreground hover:text-primary transition-colors py-2 border-t-2 border-transparent hover:border-primary font-medium text-sm">
+            <Link href="/about/team" className="text-foreground hover:text-primary transition-colors py-2 border-t-2 border-transparent hover:border-primary font-medium text-sm">
               Our Team
             </Link>
-            <Link href="#our-approach" className="text-foreground hover:text-primary transition-colors py-2 border-t-2 border-transparent hover:border-primary font-medium text-sm">
+            <Link href="/about/approach" className="text-foreground hover:text-primary transition-colors py-2 border-t-2 border-transparent hover:border-primary font-medium text-sm">
               Our Approach
             </Link>
           </div>
@@ -220,7 +220,7 @@ export default function AboutPage() {
               <p className="text-xs text-muted-foreground mt-0.5">Pixelnest in South Africa</p>
               <div className="flex items-center gap-3 mt-4">
                 <a
-                  href="mailto:nqobani@pixelnest.co.za"
+                  href="mailto:info@pixelnest.co.za"
                   className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
                   aria-label="Email Nqobani Ntuli"
                 >
@@ -242,19 +242,19 @@ export default function AboutPage() {
                 <div className="absolute inset-0 rounded-full bg-secondary ring-1 ring-border" />
                 <Image
                   src="/IMG-20260608-WA0024.jpg"
-                  alt="Director"
+                  alt="Amahle Chamane"
                   fill
                   className="object-cover rounded-full p-1.5"
                 />
               </div>
-              <h3 className="text-lg font-bold text-foreground">Director</h3>
+              <h3 className="text-lg font-bold text-foreground">Amahle Chamane</h3>
               <p className="text-sm text-primary font-medium mt-0.5">Director</p>
               <p className="text-xs text-muted-foreground mt-0.5">Pixelnest in South Africa</p>
               <div className="flex items-center gap-3 mt-4">
                 <a
-                  href="mailto:director@pixelnest.co.za"
+                  href="mailto:info@pixelnest.co.za"
                   className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-                  aria-label="Email Director"
+                  aria-label="Email Amahle Chamane"
                 >
                   <Mail className="h-4 w-4" />
                 </a>

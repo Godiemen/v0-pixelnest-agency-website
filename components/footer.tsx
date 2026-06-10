@@ -99,7 +99,7 @@ export function Footer() {
                   alt="Pixelnest"
                   width={160}
                   height={50}
-                  className="h-12 w-auto brightness-0 invert"
+                  className="h-12 w-auto"
                 />
               </Link>
               <p className="mt-4 text-white/70 text-sm leading-relaxed">
@@ -159,24 +159,24 @@ export function Footer() {
               <h4 className="text-white font-semibold text-lg mb-5">Contact Us</h4>
               <div className="flex flex-col gap-4">
                 <a
-                  href="mailto:nqobani@pixelnest.co.za"
+                  href="mailto:info@pixelnest.co.za"
                   className="flex items-center gap-3 text-white/70 hover:text-primary transition-colors duration-300 text-sm"
                 >
                   <Mail className="h-5 w-5 flex-shrink-0" />
-                  nqobani@pixelnest.co.za
+                  info@pixelnest.co.za
                 </a>
                 <div className="flex items-start gap-3 text-white/70 text-sm">
                   <MapPin className="h-5 w-5 flex-shrink-0 mt-0.5" />
                   <span>Durban, KwaZulu-Natal,<br />South Africa</span>
                 </div>
                 <a
-                  href="https://wa.me/27000000000"
+                  href="https://wa.me/27786072333"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2.5 rounded-lg font-medium hover:bg-[#20bd5a] transition-all duration-300 hover:scale-105 text-sm mt-2 w-fit"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  WhatsApp Us
+                  WhatsApp Us — +27 786072333
                 </a>
               </div>
             </div>

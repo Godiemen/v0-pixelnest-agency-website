@@ -35,25 +35,25 @@ const insights = [
     image: "/Nano Banana 2 - Abstract digital_visualization of global connectivity _ glowing blue_and white nodes.png",
     title: "E-Commerce Platform",
     description: "A demo online store with product catalog, shopping cart, and payment integration.",
-    href: "/portfolio",
+    href: "/portfolio/ecommerce",
   },
   {
     image: "/programming-code-abstract-technology-background-of-software-developer-and-computer-script.jpeg",
     title: "Mobile Delivery App",
     description: "A demo app concept with order tracking, push notifications, and payment screens.",
-    href: "/portfolio",
+    href: "/portfolio/mobile-app",
   },
   {
     image: "/digital-technology-coding-programmer-and-cyber-security-software-development-javascript-on-virtual-screen-internet-of-things-iot-photo.jpg",
     title: "Corporate Website",
     description: "A demo company website with service pages, team section, and contact forms.",
-    href: "/portfolio",
+    href: "/portfolio/corporate",
   },
   {
     image: "/Nano Banana 2 - A friendly_customer support_representative wearing a headset_ smiling warmly_at a mo.png",
     title: "Landing Page",
     description: "A demo landing page with lead capture forms and call-to-action sections.",
-    href: "/portfolio",
+    href: "/portfolio/landing",
   },
 ]
 

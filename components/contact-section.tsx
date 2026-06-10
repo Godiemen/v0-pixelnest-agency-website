@@ -141,10 +141,10 @@ export function ContactSection() {
                     Email Us
                   </h3>
                   <a
-                    href="mailto:nqobani@pixelnest.co.za"
+                    href="mailto:info@pixelnest.co.za"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    nqobani@pixelnest.co.za
+                    info@pixelnest.co.za
                   </a>
                 </div>
               </div>
@@ -174,13 +174,13 @@ export function ContactSection() {
                     WhatsApp
                   </h3>
                   <a
-                    href="https://wa.me/27000000000"
+                    href="https://wa.me/27786072333"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#25D366] text-white rounded-lg font-medium hover:bg-[#20bd5a] transition-colors mt-2"
                   >
                     <MessageCircle className="h-5 w-5" />
-                    Chat on WhatsApp
+                    Chat on WhatsApp — +27 786072333
                   </a>
                 </div>
               </div>
