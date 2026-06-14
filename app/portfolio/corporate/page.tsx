@@ -86,7 +86,7 @@ export default function CorporatePage() {
       {/* Hero */}
       <section className="relative overflow-hidden py-16 lg:py-20 min-h-[360px] flex items-center">
         <Image
-          src="/digital-technology-coding-programmer-and-cyber-security-software-development-javascript-on-virtual-screen-internet-of-things-iot-photo.jpg"
+          src="/808d8e66625f9f23dc948164e1f1171d.jpg"
           alt="Corporate Website"
           fill
           className="object-cover"
@@ -155,7 +155,7 @@ export default function CorporatePage() {
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl" />
               <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl">
                 <Image
-                  src="/digital-technology-coding-programmer-and-cyber-security-software-development-javascript-on-virtual-screen-internet-of-things-iot-photo.jpg"
+                  src="/02d061d2f8f9feb6df8ea43d33779299.jpg"
                   alt="Corporate Website"
                   width={600}
                   height={450}
@@ -223,7 +223,7 @@ export default function CorporatePage() {
       {/* Tech Stack - SaaS Premium */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-[#0f172a] to-slate-900" />
-        <div className="absolute inset-0 bg-[url('/digital-technology-coding-programmer-and-cyber-security-software-development-javascript-on-virtual-screen-internet-of-things-iot-photo.jpg')] opacity-10 bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('/146dc47b322c4034b2e6b7b9b4dffa1b.jpg')] opacity-10 bg-cover bg-center" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-slate-900/80" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -252,7 +252,7 @@ export default function CorporatePage() {
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <Image
-                  src="/digital-technology-coding-programmer-and-cyber-security-software-development-javascript-on-virtual-screen-internet-of-things-iot-photo.jpg"
+                  src="/72c9433c2717295c79e7b4caac7afb25.jpg"
                   alt="Technology stack"
                   width={600}
                   height={450}
@@ -290,13 +290,13 @@ export default function CorporatePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-background border border-border">
-              <Image src="/Nano Banana 2 - Abstract digital_visualization of global connectivity _ glowing blue_and white nodes.png" alt="Website mockup 1" fill className="object-cover" />
+              <Image src="/145ace8fef4034b718348a1efc126ccf.jpg" alt="Website mockup 1" fill className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-background border border-border">
-              <Image src="/fPm1t.jpg" alt="Website mockup 2" fill className="object-cover" />
+              <Image src="/eedaea0cc72837674a5789e39ca676b5.jpg" alt="Website mockup 2" fill className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-background border border-border">
-              <Image src="/whWZy.jpg" alt="Website mockup 3" fill className="object-cover" />
+              <Image src="/2f78ed26a90662d307856754c29a19ab.jpg" alt="Website mockup 3" fill className="object-cover" />
             </div>
           </div>
         </div>

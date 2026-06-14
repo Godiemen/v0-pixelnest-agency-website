@@ -17,14 +17,16 @@ const team = [
     role: "Founder & Developer",
     location: "Pixelnest in South Africa",
     image: "/IMG-20260605-WA0020.jpg",
-    email: "info@pixelnest.co.za",
+    email: "nqobani@pixelnest.co.za",
+    linkedin: "https://www.linkedin.com/in/nqobani-ntuli-2b47442ab",
   },
   {
     name: "Amahle Chamane",
     role: "Director",
     location: "Pixelnest in South Africa",
     image: "/IMG-20260608-WA0024.jpg",
-    email: "info@pixelnest.co.za",
+    email: "amahle@pixelnest.co.za",
+    linkedin: "https://www.linkedin.com/in/zanele-chamane-a06866354",
   },
 ]
 
@@ -37,7 +39,7 @@ export default function TeamPage() {
       {/* Hero */}
       <section className="relative overflow-hidden py-16 lg:py-20 min-h-[360px] flex items-center">
         <Image
-          src="/Nano Banana 2 - A friendly_customer support_representative wearing a headset_ smiling warmly_at a mo.png"
+          src="/03cdccfd4419ec3b76801cdcd2c7f3ae.jpg"
           alt="Meet the Team"
           fill
           className="object-cover"
@@ -73,36 +75,39 @@ export default function TeamPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {team.map((member) => (
-              <div key={member.name} className="flex flex-col items-center text-center">
-                <div className="relative w-40 h-40 mb-6">
-                  <div className="absolute inset-0 rounded-full bg-secondary ring-2 ring-border" />
+              <div key={member.name} className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-border/40 hover:shadow-xl transition-all duration-300">
+                <div className="relative aspect-[3/4] overflow-hidden">
                   <Image
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover rounded-full p-1.5"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">{member.name}</h3>
-                <p className="text-sm text-primary font-semibold mt-1">{member.role}</p>
-                <p className="text-sm text-muted-foreground mt-1">{member.location}</p>
-                <div className="flex items-center gap-3 mt-5">
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-                    aria-label={`Email ${member.name}`}
-                  >
-                    <Mail className="h-4 w-4" />
-                  </a>
-                  <a
-                    href="#"
-                    className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </a>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-foreground">{member.name}</h3>
+                  <p className="text-sm text-primary font-semibold mt-0.5">{member.role}</p>
+                  <div className="flex items-center gap-2 mt-4">
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary/90 transition-colors"
+                      aria-label={`Email ${member.name}`}
+                    >
+                      <Mail className="h-3.5 w-3.5" />
+                    </a>
+                    <a
+                      href={member.linkedin || "#"}
+                      target={member.linkedin ? "_blank" : undefined}
+                      rel={member.linkedin ? "noopener noreferrer" : undefined}
+                      className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary/90 transition-colors"
+                      aria-label="LinkedIn"
+                    >
+                      <Linkedin className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}

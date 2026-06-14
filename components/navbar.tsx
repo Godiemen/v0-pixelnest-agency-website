@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, X, Search, ChevronRight } from "lucide-react"
+import { Menu, X, ChevronRight, Globe, Smartphone, Palette, ShoppingCart, Wrench, FileText, Heart, Users, Target, Lightbulb, BarChart3, TrendingUp } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
@@ -15,26 +15,24 @@ const navLinks = [
 ]
 
 const workLinks = [
-  { href: "/portfolio/ecommerce", label: "E-Commerce Platform", desc: "Online store with payments" },
-  { href: "/portfolio/mobile-app", label: "Mobile Delivery App", desc: "iOS & Android on-demand app" },
-  { href: "/portfolio/corporate", label: "Corporate Website", desc: "Multi-page business site" },
-  { href: "/portfolio/landing", label: "Landing Page", desc: "High-converting lead page" },
+  { href: "/portfolio/ecommerce", label: "E-Commerce Platform", desc: "Online store with payments", icon: ShoppingCart },
+  { href: "/portfolio/corporate", label: "Corporate Website", desc: "Multi-page business site", icon: FileText },
+  { href: "/portfolio/landing", label: "Landing Page", desc: "High-converting lead page", icon: TrendingUp },
 ]
 
 const serviceLinks = [
-  { href: "/services", label: "Website Development", desc: "Custom sites that convert visitors" },
-  { href: "/services", label: "App Development", desc: "iOS & Android native apps" },
-  { href: "/services", label: "UI/UX Design", desc: "Beautiful, usable interfaces" },
-  { href: "/services", label: "E-Commerce Solutions", desc: "Online stores with payments" },
-  { href: "/services", label: "SEO & Marketing", desc: "Get found on Google" },
-  { href: "/services", label: "Maintenance", desc: "Keep your site running smoothly" },
+  { href: "/services/website-development", label: "Website Development", desc: "Custom sites that convert visitors", icon: Globe },
+  { href: "/services/app-development", label: "App Development", desc: "iOS & Android native apps", icon: Smartphone },
+  { href: "/services/ui-ux-design", label: "UI/UX Design", desc: "Beautiful, usable interfaces", icon: Palette },
+  { href: "/services/e-commerce", label: "E-Commerce Solutions", desc: "Online stores with payments", icon: ShoppingCart },
+  { href: "/services/maintenance", label: "Maintenance", desc: "Keep your site running smoothly", icon: Wrench },
 ]
 
 const aboutLinks = [
-  { href: "/about/story", label: "Our Story", desc: "How Pixelnest began" },
-  { href: "/about/values", label: "Our Values", desc: "What drives us every day" },
-  { href: "/about/team", label: "Meet the Team", desc: "The people behind Pixelnest" },
-  { href: "/about/approach", label: "Our Approach", desc: "How we deliver projects" },
+  { href: "/about/story", label: "Our Story", desc: "How Pixelnest began", icon: Lightbulb },
+  { href: "/about/values", label: "Our Values", desc: "What drives us every day", icon: Heart },
+  { href: "/about/team", label: "Meet the Team", desc: "The people behind Pixelnest", icon: Users },
+  { href: "/about/approach", label: "Our Approach", desc: "How we deliver projects", icon: Target },
 ]
 
 export function Navbar() {
@@ -139,46 +137,60 @@ export function Navbar() {
               </button>
 
               {aboutOpen && (
-                <div className="absolute top-full left-0 mt-2 w-[640px] bg-white rounded-xl shadow-2xl border border-border overflow-hidden z-50">
-                  <div className="px-8 py-5 border-b border-border flex items-center gap-4">
-                    <span className="font-bold text-foreground text-base">About</span>
+                <div className="absolute top-full left-0 mt-2 w-[560px] bg-white rounded-2xl shadow-2xl border border-border/50 overflow-hidden z-50">
+                  {/* Header */}
+                  <div className="px-6 py-4 border-b border-border/60 flex items-center justify-between bg-secondary/20">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <Image src="/logo.png" alt="Pixelnest" width={18} height={18} className="object-contain" />
+                      </div>
+                      <span className="font-bold text-foreground text-sm">About Pixelnest</span>
+                    </div>
                     <Link
                       href="/about"
                       onClick={() => setAboutOpen(false)}
-                      className="text-primary hover:underline text-sm inline-flex items-center gap-1"
+                      className="text-primary text-xs font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all bg-primary/5 px-3 py-1.5 rounded-full hover:bg-primary/10"
                     >
-                      See all <ChevronRight className="h-3.5 w-3.5" />
+                      View all <ChevronRight className="h-3 w-3" />
                     </Link>
                   </div>
 
-                  <div className="p-8 grid grid-cols-2 gap-x-8 gap-y-5">
+                  {/* Links */}
+                  <div className="p-4 grid grid-cols-2 gap-2">
                     {aboutLinks.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
                         onClick={() => setAboutOpen(false)}
-                        className="group/item block py-3 border-t-2 border-transparent hover:border-primary transition-colors"
+                        className="group/item flex items-start gap-3 p-3 rounded-xl hover:bg-secondary/50 transition-all"
                       >
-                        <span className="text-foreground font-medium group-hover/item:text-primary transition-colors block text-[15px]">
-                          {item.label}
-                        </span>
-                        <span className="text-muted-foreground text-sm mt-1 block">
-                          {item.desc}
-                        </span>
+                        <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover/item:bg-primary/15 transition-colors">
+                          <item.icon className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <span className="text-foreground font-semibold group-hover/item:text-primary transition-colors block text-sm leading-tight">
+                            {item.label}
+                          </span>
+                          <span className="text-muted-foreground text-xs mt-0.5 block leading-relaxed">
+                            {item.desc}
+                          </span>
+                        </div>
                       </Link>
                     ))}
                   </div>
 
-                  <div className="relative h-52">
+                  {/* Bottom banner */}
+                  <div className="relative h-44 mx-4 mb-4 rounded-xl overflow-hidden">
                     <Image
                       src="/Nano Banana 2 - Web DevelopmentA clean_ modern workspace with a large ultrawide monitor displaying a.png"
                       alt="About Pixelnest"
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-5 left-8">
-                      <span className="text-white font-semibold text-base">About Pixelnest</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-4 left-5">
+                      <span className="text-white font-semibold text-sm">About Pixelnest</span>
+                      <p className="text-white/70 text-xs mt-0.5">Discover what drives us</p>
                     </div>
                   </div>
                 </div>
@@ -205,46 +217,60 @@ export function Navbar() {
               </button>
 
               {servicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-[640px] bg-white rounded-xl shadow-2xl border border-border overflow-hidden z-50">
-                  <div className="px-8 py-5 border-b border-border flex items-center gap-4">
-                    <span className="font-bold text-foreground text-base">Services</span>
+                <div className="absolute top-full left-0 mt-2 w-[560px] bg-white rounded-2xl shadow-2xl border border-border/50 overflow-hidden z-50">
+                  {/* Header */}
+                  <div className="px-6 py-4 border-b border-border/60 flex items-center justify-between bg-secondary/20">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <Image src="/logo.png" alt="Pixelnest" width={18} height={18} className="object-contain" />
+                      </div>
+                      <span className="font-bold text-foreground text-sm">Our Services</span>
+                    </div>
                     <Link
                       href="/services"
                       onClick={() => setServicesOpen(false)}
-                      className="text-primary hover:underline text-sm inline-flex items-center gap-1"
+                      className="text-primary text-xs font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all bg-primary/5 px-3 py-1.5 rounded-full hover:bg-primary/10"
                     >
-                      See all <ChevronRight className="h-3.5 w-3.5" />
+                      View all <ChevronRight className="h-3 w-3" />
                     </Link>
                   </div>
 
-                  <div className="p-8 grid grid-cols-2 gap-x-8 gap-y-5">
+                  {/* Links */}
+                  <div className="p-4 grid grid-cols-2 gap-2">
                     {serviceLinks.map((item) => (
                       <Link
                         key={item.label}
                         href={item.href}
                         onClick={() => setServicesOpen(false)}
-                        className="group/item block py-3 border-t-2 border-transparent hover:border-primary transition-colors"
+                        className="group/item flex items-start gap-3 p-3 rounded-xl hover:bg-secondary/50 transition-all"
                       >
-                        <span className="text-foreground font-medium group-hover/item:text-primary transition-colors block text-[15px]">
-                          {item.label}
-                        </span>
-                        <span className="text-muted-foreground text-sm mt-1 block">
-                          {item.desc}
-                        </span>
+                        <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover/item:bg-primary/15 transition-colors">
+                          <item.icon className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <span className="text-foreground font-semibold group-hover/item:text-primary transition-colors block text-sm leading-tight">
+                            {item.label}
+                          </span>
+                          <span className="text-muted-foreground text-xs mt-0.5 block leading-relaxed">
+                            {item.desc}
+                          </span>
+                        </div>
                       </Link>
                     ))}
                   </div>
 
-                  <div className="relative h-52">
+                  {/* Bottom banner */}
+                  <div className="relative h-44 mx-4 mb-4 rounded-xl overflow-hidden">
                     <Image
                       src="/Nano Banana 2 - ramatic close-up of a glowing_analytics dashboard on a laptop screen __bar graphs_tr.png"
                       alt="Our Services"
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-5 left-8">
-                      <span className="text-white font-semibold text-base">Services by Pixelnest</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-4 left-5">
+                      <span className="text-white font-semibold text-sm">Services by Pixelnest</span>
+                      <p className="text-white/70 text-xs mt-0.5">Solutions that drive growth</p>
                     </div>
                   </div>
                 </div>
@@ -271,49 +297,60 @@ export function Navbar() {
               </button>
 
               {workOpen && (
-                <div className="absolute top-full left-0 mt-2 w-[640px] bg-white rounded-xl shadow-2xl border border-border overflow-hidden z-50">
+                <div className="absolute top-full left-0 mt-2 w-[560px] bg-white rounded-2xl shadow-2xl border border-border/50 overflow-hidden z-50">
                   {/* Header */}
-                  <div className="px-8 py-5 border-b border-border flex items-center gap-4">
-                    <span className="font-bold text-foreground text-base">Our Work</span>
+                  <div className="px-6 py-4 border-b border-border/60 flex items-center justify-between bg-secondary/20">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
+                        <Image src="/logo.png" alt="Pixelnest" width={18} height={18} className="object-contain" />
+                      </div>
+                      <span className="font-bold text-foreground text-sm">Our Work</span>
+                    </div>
                     <Link
                       href="/portfolio"
                       onClick={() => setWorkOpen(false)}
-                      className="text-primary hover:underline text-sm inline-flex items-center gap-1"
+                      className="text-primary text-xs font-semibold inline-flex items-center gap-1 hover:gap-2 transition-all bg-primary/5 px-3 py-1.5 rounded-full hover:bg-primary/10"
                     >
-                      See all <ChevronRight className="h-3.5 w-3.5" />
+                      View all <ChevronRight className="h-3 w-3" />
                     </Link>
                   </div>
 
-                  {/* Links Grid */}
-                  <div className="p-8 grid grid-cols-2 gap-x-8 gap-y-5">
+                  {/* Links */}
+                  <div className="p-4 grid grid-cols-2 gap-2">
                     {workLinks.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
                         onClick={() => setWorkOpen(false)}
-                        className="group/item block py-3 border-t-2 border-transparent hover:border-primary transition-colors"
+                        className="group/item flex items-start gap-3 p-3 rounded-xl hover:bg-secondary/50 transition-all"
                       >
-                        <span className="text-foreground font-medium group-hover/item:text-primary transition-colors block text-[15px]">
-                          {item.label}
-                        </span>
-                        <span className="text-muted-foreground text-sm mt-1 block">
-                          {item.desc}
-                        </span>
+                        <div className="w-9 h-9 bg-primary/10 rounded-lg flex items-center justify-center shrink-0 group-hover/item:bg-primary/15 transition-colors">
+                          <item.icon className="h-4 w-4 text-primary" />
+                        </div>
+                        <div>
+                          <span className="text-foreground font-semibold group-hover/item:text-primary transition-colors block text-sm leading-tight">
+                            {item.label}
+                          </span>
+                          <span className="text-muted-foreground text-xs mt-0.5 block leading-relaxed">
+                            {item.desc}
+                          </span>
+                        </div>
                       </Link>
                     ))}
                   </div>
 
-                  {/* Bottom Image */}
-                  <div className="relative h-52">
+                  {/* Bottom banner */}
+                  <div className="relative h-44 mx-4 mb-4 rounded-xl overflow-hidden">
                     <Image
                       src="/Nano Banana 2 - Web DevelopmentA clean_ modern workspace with a large ultrawide monitor displaying a.png"
                       alt="Our Work"
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-5 left-8">
-                      <span className="text-white font-semibold text-base">Sample Projects by Pixelnest</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-4 left-5">
+                      <span className="text-white font-semibold text-sm">Sample Projects by Pixelnest</span>
+                      <p className="text-white/70 text-xs mt-0.5">See what we have built</p>
                     </div>
                   </div>
                 </div>
@@ -321,24 +358,8 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Search, Get a Quote Button & Mobile Menu */}
+          {/* Mobile Menu Button */}
           <div className="flex items-center gap-4">
-            {/* Search button */}
-            <button
-              className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary/20 transition-colors"
-              aria-label="Search"
-            >
-              <Search className="h-5 w-5" />
-            </button>
-
-            <Link
-              href="/contact"
-              className="hidden sm:inline-flex bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-            >
-              Get a Quote
-            </Link>
-
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden text-foreground hover:text-primary transition-colors"
@@ -366,13 +387,6 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="mx-4 mt-2 bg-primary text-primary-foreground px-4 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors text-center"
-              >
-                Get a Quote
-              </Link>
             </div>
           </div>
         )}

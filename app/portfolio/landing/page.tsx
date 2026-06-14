@@ -86,7 +86,7 @@ export default function LandingPage() {
       {/* Hero */}
       <section className="relative overflow-hidden py-16 lg:py-20 min-h-[360px] flex items-center">
         <Image
-          src="/Nano Banana 2 - A friendly_customer support_representative wearing a headset_ smiling warmly_at a mo.png"
+          src="/b7f8c6cce2c8a28d1b88105c7743b480.jpg"
           alt="Landing Page"
           fill
           className="object-cover"
@@ -155,7 +155,7 @@ export default function LandingPage() {
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl" />
               <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl">
                 <Image
-                  src="/Nano Banana 2 - A friendly_customer support_representative wearing a headset_ smiling warmly_at a mo.png"
+                  src="/fa2c78864fa179272856403f487954b8.jpg"
                   alt="Landing Page"
                   width={600}
                   height={450}
@@ -223,7 +223,7 @@ export default function LandingPage() {
       {/* Tech Stack - SaaS Premium */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-[#0f172a] to-slate-900" />
-        <div className="absolute inset-0 bg-[url('/Nano Banana 2 - A friendly_customer support_representative wearing a headset_ smiling warmly_at a mo.png')] opacity-10 bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('/13f1cfec181e91733eb10abaa487deaa.jpg')] opacity-10 bg-cover bg-center" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-slate-900/80" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -252,7 +252,7 @@ export default function LandingPage() {
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-3xl blur-2xl" />
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                 <Image
-                  src="/Nano Banana 2 - A friendly_customer support_representative wearing a headset_ smiling warmly_at a mo.png"
+                  src="/e31643e34bf2c452ba673eec134f1ba2.jpg"
                   alt="Technology stack"
                   width={600}
                   height={450}
@@ -288,15 +288,18 @@ export default function LandingPage() {
               Screenshots and mockups from the project.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-background border border-border">
-              <Image src="/Nano Banana 2 - Abstract digital_visualization of global connectivity _ glowing blue_and white nodes.png" alt="Landing page mockup 1" fill className="object-cover" />
+              <Image src="/277807077925bcd8de26ac004e6e7600.jpg" alt="Landing page mockup 1" fill className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-background border border-border">
-              <Image src="/fPm1t.jpg" alt="Landing page mockup 2" fill className="object-cover" />
+              <Image src="/de5583c172d0c550f79b2f226a7656b7.jpg" alt="Landing page mockup 2" fill className="object-cover" />
             </div>
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-background border border-border">
-              <Image src="/whWZy.jpg" alt="Landing page mockup 3" fill className="object-cover" />
+              <Image src="/d858ede23b1a2e154fc37edb66b4a875.jpg" alt="Landing page mockup 3" fill className="object-cover" />
+            </div>
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-background border border-border">
+              <Image src="/46c891e0565c033d0f3f21e79b49ce1d.jpg" alt="Landing page mockup 4" fill className="object-cover" />
             </div>
           </div>
         </div>

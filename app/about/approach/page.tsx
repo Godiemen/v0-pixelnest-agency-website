@@ -47,7 +47,7 @@ export default function ApproachPage() {
       {/* Hero */}
       <section className="relative overflow-hidden py-16 lg:py-20 min-h-[360px] flex items-center">
         <Image
-          src="/digital-technology-coding-programmer-and-cyber-security-software-development-javascript-on-virtual-screen-internet-of-things-iot-photo.jpg"
+          src="/a9bbeac3c2fb57eec6d0fe996932f51c.jpg"
           alt="Our Approach"
           fill
           className="object-cover"

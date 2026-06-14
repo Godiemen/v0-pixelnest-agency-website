@@ -44,7 +44,7 @@ export default function ValuesPage() {
       {/* Hero */}
       <section className="relative overflow-hidden py-16 lg:py-20 min-h-[360px] flex items-center">
         <Image
-          src="/Nano Banana 2 - ramatic close-up of a glowing_analytics dashboard on a laptop screen __bar graphs_tr.png"
+          src="/221911e521f752260dfa32c2665c7258.jpg"
           alt="Our Values"
           fill
           className="object-cover"

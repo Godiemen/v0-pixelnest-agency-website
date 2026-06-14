@@ -62,7 +62,7 @@ export default function ContactPage() {
       <section className="relative py-16 lg:py-20 overflow-hidden">
         {/* Background Image */}
         <Image
-          src="/Nano Banana 2 - Abstract digital_visualization of global connectivity _ glowing blue_and white nodes.png"
+          src="/8aed6554b5e9aa541864007181d4dbda.jpg"
           alt=""
           fill
           className="object-cover"
