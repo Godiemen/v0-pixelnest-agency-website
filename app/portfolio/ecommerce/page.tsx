@@ -334,9 +334,9 @@ export default function EcommercePage() {
       <section className="py-20 bg-secondary">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Project Gallery</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Work Samples</h2>
             <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-              Screenshots and mockups from the project. Replace these with your own images.
+              Visual examples of our design style and capabilities.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

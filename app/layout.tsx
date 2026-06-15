@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   keywords: ['web development', 'app development', 'Durban', 'South Africa', 'website design', 'mobile apps', 'UI/UX design'],
   authors: [{ name: 'Pixelnest' }],
   icons: {
-    icon: '/icon.svg',
-    shortcut: '/icon-dark-32x32.png',
-    apple: '/apple-icon.png',
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
   },
   openGraph: {
     title: 'Pixelnest | Web & App Development Agency',

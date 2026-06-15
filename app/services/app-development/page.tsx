@@ -142,7 +142,7 @@ export default function AppDevelopmentPage() {
           <ScrollReveal>
             <div className="text-center mb-14">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">App Showcase</h2>
-              <p className="mt-3 text-muted-foreground max-w-xl mx-auto">Screenshots and mockups from our app projects.</p>
+              <p className="mt-3 text-muted-foreground max-w-xl mx-auto">Sample visuals demonstrating our app design capabilities.</p>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

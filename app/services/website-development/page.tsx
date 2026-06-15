@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
   title: 'Website Development | Pixelnest',
-  description: 'Fast, modern, mobile-friendly websites for South African businesses. Starting from R2,500.',
+  description: 'Fast, modern, mobile-friendly websites for South African businesses. Starting from R2,500 - R5,000 depending on complexity.',
 }
 
 const features = [
@@ -49,9 +49,12 @@ export default function WebsiteDevelopmentPage() {
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">Website Development</h1>
           <p className="mt-4 text-lg text-white/80 max-w-2xl">Fast, modern, mobile-friendly websites that turn visitors into customers. Built for South African businesses.</p>
-          <div className="mt-8 flex items-center gap-4">
-            <span className="text-xl font-bold text-white">From R2,500</span>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors">
+          <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
+            <div>
+              <span className="text-xl font-bold text-white">R2,500 - R5,000</span>
+              <p className="text-sm text-white/60 mt-1">Single page to multi-page websites</p>
+            </div>
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors w-fit">
               Get a Quote <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
@@ -145,7 +148,7 @@ export default function WebsiteDevelopmentPage() {
           <ScrollReveal>
             <div className="text-center mb-14">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground">Website Showcase</h2>
-              <p className="mt-3 text-muted-foreground max-w-xl mx-auto">Screenshots and mockups from our web projects.</p>
+              <p className="mt-3 text-muted-foreground max-w-xl mx-auto">Sample visuals demonstrating our web design capabilities.</p>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

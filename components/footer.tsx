@@ -48,10 +48,8 @@ function TwitterIcon({ className }: { className?: string }) {
 }
 
 const socialLinks = [
-  { href: "https://facebook.com", icon: FacebookIcon, label: "Facebook" },
-  { href: "https://instagram.com", icon: InstagramIcon, label: "Instagram" },
-  { href: "https://linkedin.com", icon: LinkedinIcon, label: "LinkedIn" },
-  { href: "https://twitter.com", icon: TwitterIcon, label: "Twitter" },
+  { href: "https://www.facebook.com/share/14hZt79nAoC/", icon: FacebookIcon, label: "Facebook" },
+  { href: "https://www.instagram.com/pixelnest334", icon: InstagramIcon, label: "Instagram" },
 ]
 
 export function Footer() {
